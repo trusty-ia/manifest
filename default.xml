@@ -5,7 +5,7 @@
     <remote name="trusty-ia" fetch="https://github.com/trusty-ia" />
     <remote name="aosp" fetch="https://android.googlesource.com" />
 
-    <default revision="master"
+    <default revision="omr1"
              remote="trusty-ia"
              sync-c="true"
              sync-j="5" />
@@ -33,8 +33,8 @@
     </project>
 
     <!-- trusty toolchains projects -->
-    <project path="toolchain/elf" name="trusty_toolchain"/>
-    <project path="toolchain/gcc/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/" remote="aosp"/>
+    <project path="toolchain/elf" name="trusty_toolchain" revision="master"/>
+    <project path="toolchain/gcc/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/" remote="aosp" revision="master"/>
 
     <!-- trusty build projects -->
     <project path="build" name="build">
