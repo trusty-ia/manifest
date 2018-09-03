@@ -35,6 +35,7 @@
     <!-- trusty toolchains projects -->
     <project path="toolchain/elf" name="trusty_toolchain"/>
     <project path="toolchain/gcc/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/" remote="aosp"/>
+    <project path="toolchain/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" clone-depth="1" />
 
     <!-- trusty build projects -->
     <project path="build" name="build">
