@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<manifest>
+    <remote name="trusty-ia" fetch="https://github.com/trusty-ia" />
+    <remote name="aosp" fetch="https://android.googlesource.com" />
+
+    <default revision="master"
+             remote="trusty-ia"
+             sync-c="true"
+             sync-j="5" />
+
+    <!-- trusty core projects -->
+    <project path="trusty/external/headers" name="trusty_external_headers"/>
+    <project path="trusty/external/lk" name="trusty_external_lk">
+        <copyfile src="makefile" dest="trusty/makefile"/>
+    </project>
+    <project path="trusty/lk/trusty" name="trusty_lk_trusty"/>
+    <project path="trusty/lib" name="trusty_lib"/>
+
+    <!-- trusty app projects -->
+    <project path="trusty/app/gatekeeper" name="trusty_app_gatekeeper"/>
+    <project path="trusty/app/keymaster" name="trusty_app_keymaster"/>
+    <project path="trusty/app/sample" name="trusty_app_sample"/>
+    <project path="trusty/app/storage" name="trusty_app_storage"/>
+
+    <!-- trusty vendor projects -->
+    <project path="trusty/vendor/google/aosp" name="trusty_vendor_google_aosp" >
+        <copyfile src="lk_inc.mk" dest="trusty/lk_inc.mk"/>
+    </project>
+
+    <!-- trusty toolchains projects -->
+    <project path="toolchain/gcc/x86_64-linux-android-4.9" name="platform/prebuilts/gcc/linux-x86/x86/x86_64-linux-android-4.9/" remote="aosp"/>
+    <project path="toolchain/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" remote="aosp" clone-depth="1" />
+
+    <!-- trusty build projects -->
+    <project path="build" name="build">
+        <copyfile dest="makefile" src="linux_trusty.mk"/>
+    </project>
+
+    <!-- trusty sand projects -->
+    <project path="trusty/app/sand" name="trusty_app_sand"/>
+    <project path="trusty/device/x86/sand" name="trusty_device_x86_sand"/>
+    <project path="trusty/platform/sand" name="trusty_platform_sand"/>
+    <project path="trusty/target/sand" name="trusty_target_sand"/>
+
+    <!-- trusty TA projects -->
+    <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+    <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+    <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+    <project path="external/lzma" name="platform/external/lzma" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+
+    <!-- trusty CA projects -->
+    <project path="system/core" name="platform/system/core" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+
+</manifest>
