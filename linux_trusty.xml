@@ -44,7 +44,7 @@
     <project path="trusty/target/sand" name="trusty_target_sand"/>
 
     <!-- trusty TA projects -->
-    <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
+    <project path="system/keymaster" name="platform/system/keymaster" groups="pdk" revision="refs/tags/android-o-mr1-iot-release-1.0.4" remote="aosp" />
     <project path="hardware/libhardware" name="platform/hardware/libhardware" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
     <project path="external/boringssl" name="platform/external/boringssl" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
     <project path="external/lzma" name="platform/external/lzma" groups="pdk" revision="refs/tags/android-9.0.0_r3" remote="aosp" />
